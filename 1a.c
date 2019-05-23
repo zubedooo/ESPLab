@@ -15,7 +15,7 @@
 	//InitPWM(6);//inbuilt
 	Initial_panel();  // initialize LCD pannel
   clr_all_panel();  // clear LCD panel 
-  print_lcd(0,"variable reistor");
+  print_lcd(0,"variable resistor");
 	DrvADC_Open(ADC_SINGLE_END,ADC_SINGLE_OP , 0x40,INTERNAL_HCLK , 1); 	//0x40 FOR CHANNEL 6
 	while(1)
    {
