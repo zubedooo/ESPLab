@@ -4,7 +4,8 @@
 #include "DrvPWM.h"
 #include "DrvADC.h"
 #include "LCD_Driver.h" 
- int32_t main (void)
+
+int32_t main (void)
 {UNLOCKREG();
 LOCKREG();
 InitPWM();
