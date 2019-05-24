@@ -5,7 +5,8 @@
 #include "DrvADC.h"
 #include "LCD_Driver.h"
 #include "Driver\DrvGPIO.h"
- int32_t main (void)
+
+int32_t main (void)
 {char value[15];  
 float volt = 0;
 UNLOCKREG();
