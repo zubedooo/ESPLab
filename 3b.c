@@ -13,7 +13,7 @@ DrvGPIO_SetBit(E_GPB,11); // GPB11 = 1 to turn off Buzzer
 //DrvSYS_Delay(100000);	    // Delay 	
 Initial_panel(); 
 clr_all_panel();
-print_lcd(0,"supriya");
+print_lcd(0,"Your Name");
 DrvSYS_Delay(10000000);	    
 clr_all_panel();
 }
