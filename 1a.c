@@ -19,7 +19,7 @@ print_lcd(0,"variable resistor");
 DrvADC_Open(ADC_SINGLE_END,ADC_SINGLE_OP , 0x40,INTERNAL_HCLK , 1); 	//0x40 FOR CHANNEL 6
 while(1)
 {DrvADC_StartConvert();   // start A/D conversion
-//while(DrvADC_IsConversionDone()==FALSE);
+while(DrvADC_IsConversionDone()==FALSE);
 PWMA->CMR0=ADC->ADDR[6].RSLT<<4;
 volt = ((float)ADC->ADDR[6].RSLT/4095.0  )*5;
 sprintf(value,"%fV",volt);  //ADC CHANNEL 6
