@@ -3,18 +3,22 @@
 #include "Driver\DrvSYS.h"
 #include "Driver\DrvGPIO.h"
 #include "Driver\DrvADC.h"
-void EINT1Callback() 
-{DrvGPIO_ClrBit(E_GPB,11); // GPB11 = 0 to turn on Buzzer
-DrvSYS_Delay(100000);        // Delay 
-DrvGPIO_SetBit(E_GPB,11); // GPB11 = 1 to turn off Buzzer    
+void EINT1Callback() {
+while(1){
+DrvGPIO_ClrBit(E_GPB,11);
+DrvSYS_Delay(100000);
+DrvGPIO_SetBit(E_GPB,11);
 DrvSYS_Delay(100000);
 }
-int main (void)
-{UNLOCKREG();               // unlock register for programming
-DrvSYS_Open(48000000);     // set System Clock to run at 48MHz
-LOCKREG();                   // lock register from programming
-DrvGPIO_Open(E_GPB, 11, E_IO_OUTPUT);   
-DrvGPIO_EnableEINT1(E_IO_BOTH_EDGE,E_MODE_EDGE,EINT1Callback);
-while(1) 
-{}
 }
+int main (void)
+{
+UNLOCKREG();
+DrvSYS_Open(48000000);
+LOCKREG();
+DrvGPIO_Open(E_GPB, 11, E_IO_OUTPUT); // initial GPIO pin GPB11 for controlling Buzzer
+DrvGPIO_Open(E_GPB, 15,E_IO_INPUT);
+DrvGPIO_EnableEINT1(E_IO_BOTH_EDGE,E_MODE_EDGE,EINT1Callback);
+while(1) {}
+}
+__________
