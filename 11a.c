@@ -1,6 +1,6 @@
 /*Instructions:
 1. Copy paste InitPWM from:
-Nuvaton_Keil -> Src -> Driver -> Driver_PWM_Servo.c
+Sample->NUC1xx..->Sample ADC PWM
 2. Rename to InitPWM_A()
 */
 #include <stdio.h>
