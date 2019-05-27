@@ -18,7 +18,7 @@ while (1)
 {number=DrvGPIO_GetPortBits(E_GPA);
 sprintf(TEXT1,"%x",number);
 print_lcd(1,TEXT1);
-if(number==0xffff)
+if(number==0xfffe)
 print_lcd(2,"A0 ");
 else
 print_lcd(2,"grounded"); // grounded ?
