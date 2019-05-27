@@ -42,7 +42,7 @@ while(1)
 {
 DrvADC_StartConvert(); // start A/D conversion
 while(DrvADC_IsConversionDone()==FALSE);
-value = ADC->ADDR[7].RSLT & 0xFFF;
+value = ADC->ADDR[2].RSLT & 0xFFF;
 sprintf(TEXT,"Value: %d",value); // convert ADC0 value into text
 print_lcd(1, TEXT); // output TEXT to LCD
 seg_display(value);
