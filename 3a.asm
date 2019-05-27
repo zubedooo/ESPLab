@@ -1,7 +1,7 @@
-PRESERVE8     
-THUMB    
-AREA    |.text|, CODE, READONLY
-EXPORT __main   
+     PRESERVE8     
+     THUMB    
+     AREA    |.text|, CODE, READONLY
+     EXPORT __main   
 
 __main 
      ldr r1, =0x50004000  ; Base Address of C Port,Register PMD
